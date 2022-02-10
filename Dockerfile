@@ -25,3 +25,5 @@ COPY . /app
 CMD ["./bin/dev"]
 
 #docker run -it -p 3000:3000 -v "$PWD":/app stockademy sh
+#set-option -g prefix C-a
+#resize-pane -D 10

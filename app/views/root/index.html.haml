@@ -1,2 +1,8 @@
 %h1 Root#index
 %p Find me in app/views/root/index.html.haml
+
+- if user_signed_in?
+  - if current_user.username.nil?
+    %p hello #{current_user.email}
+  - else
+    %p hello #{current_user.username}
