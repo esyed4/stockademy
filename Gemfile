@@ -34,6 +34,8 @@ gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
+gem 'httparty', '~> 0.18.1'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
