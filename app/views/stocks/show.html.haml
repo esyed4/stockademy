@@ -1,39 +1,39 @@
 %p#notice= notice
 
-%p
-  %b Stock symbol:
-  = @stock.stock_symbol
-%p
-  %b Company name:
-  = @stock.company_name
-%p
-  %b Description:
-  = @stock.description
-%p
-  %b Currency:
-  = @stock.currency
-%p
-  %b Country:
-  = @stock.country
-%p
-  %b Exchange:
-  = @stock.exchange
-%p
-  %b Ipo:
-  = @stock.ipo
-%p
-  %b Phone:
-  = @stock.phone
-%p
-  %b Weburl:
-  = @stock.weburl
-%p
-  %b Logo:
-  = @stock.logo
-%p
-  %b Industry:
-  = @stock.industry
 
-= link_to 'Edit', edit_stock_path(@stock)
-\|
-= link_to 'Back', stocks_path
+- @stocks.each do |stock|
+  %p
+    %b Stock symbol:
+    = @stock.stock_symbol
+  %p
+    %b Company name:
+    = @stock.company_name
+  %p
+    %b Description:
+    = @stock.description
+  %p
+    %b Currency:
+    = @stock.currency
+  %p
+    %b Country:
+    = @stock.country
+  %p
+    %b Exchange:
+    = @stock.exchange
+  %p
+    %b Ipo:
+    = @stock.ipo
+  %p
+    %b Phone:
+    = @stock.phone
+  %p
+    %b Weburl:
+    = @stock.weburl
+  %p
+    %b Logo:
+    = @stock.logo
+  %p
+    %b Industry:
+    = @stock.industry
+
+  = link_to 'Back', stocks_path

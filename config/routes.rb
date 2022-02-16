@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'profile/update'
   devise_for :users
 
+  resources :stocks, only: [:index, :show]
+
 
   root 'root#index'
 
