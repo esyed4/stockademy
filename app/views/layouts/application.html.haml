@@ -29,7 +29,7 @@
               %ul{:class => "dropdown-menu", "aria-labelledby" => "navbarDropdown"}
                 - if user_signed_in?
                   %li
-                    %a{:class => "dropdown-item", :href => "/profile/index"} Profile
+                    %a{:class => "dropdown-item", :href => "/profile/"} Profile
                   %li
                     %hr{:class => "dropdown-divider"}
                   %li
@@ -42,15 +42,9 @@
                     %hr{:class => "dropdown-divider"}
                   %li
                     %a{:class => "dropdown-item", :href => "/users/sign_up"} Sign Up
-    %div{:class => "d-flex flex-column align-items-stretch flex-shrink-0 p-3 bg-white", :style => "width: 300px;", :id => "sidebarSupportedContent"}
-      %div{:class => "container-fluid"}
-        %span Placeholder for information
-
-
-
-
-
-    %div{:class => "container", :id => "flash_message"}
-      - flash.each do |name, message|
-        %div{:class => "alert alert-#{name}", :role => "alert"} #{message}
-    = yield
+    #mainContentWrapper.d-flex.p-0
+      #sidebarSupportedContent.d-flex.p-3.bg-dark.border-right{style: "width: 300px; height: 100vh"}
+        .container-fluid
+      #mainSupportedContent.container-fluid
+        .row
+          = yield

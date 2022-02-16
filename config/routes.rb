@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'profile/index'
+  resources :stocks
+  get 'profile/', to: "profile#index"
   get 'profile/show'
   get 'profile/edit'
   get 'profile/update'
   devise_for :users
+
 
   root 'root#index'
 
