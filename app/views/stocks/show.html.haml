@@ -1,7 +1,9 @@
 %p#notice= notice
 
+- if @stock == {}
+  %p Stock does not exist
+- else
 
-- @stocks.each do |stock|
   %p
     %b Stock symbol:
     = @stock.stock_symbol

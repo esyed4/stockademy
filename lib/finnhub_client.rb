@@ -1,7 +1,7 @@
 require 'httparty'
 
 class FinnhubClient
-  ACCESS_TOKEN = 'c1up9caad3i9ippc02q0'
+  ACCESS_TOKEN = Rails.application.credentials.api_keys.finnhub_key
   BASE_URL = 'https://finnhub.io/api/v1'
 
   def stock_info(stock_symbol)

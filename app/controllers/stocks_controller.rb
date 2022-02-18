@@ -1,3 +1,5 @@
+require 'stock_search_service'
+
 class StocksController < ApplicationController
 
   # GET /stocks or /stocks.json
@@ -7,7 +9,9 @@ class StocksController < ApplicationController
 
   # GET /stocks/1 or /stocks/1.json
   def show
-    @stocks = Stock.all
+    stock_populator = StockSearchService.new
+    @stock_symbol = params[:id]
+    @stock = stock_populator.stock_by_symbol(@stock_symbol)
   end
 
   private
