@@ -1,6 +1,11 @@
-version: '3.4'
-
 services:
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - /var/lib/postgresql/data
+    restart: always
+    env_file:
+      - .env
   web:
     image: web
     build: .
@@ -14,4 +19,9 @@ services:
     expose:
       - 3000
     command: bash -c "rm -f tmp/pids/server.pid && bin/dev"
+    depends_on:
+      - db
+    env_file:
+      - .env
+
 
