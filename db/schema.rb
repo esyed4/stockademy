@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_20_035642) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_20_231631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_20_035642) do
 
   create_table "portfolios", force: :cascade do |t|
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stock_prices", force: :cascade do |t|
+    t.integer "stock_id"
+    t.decimal "current_price", precision: 6, scale: 2
+    t.decimal "day_high_price", precision: 6, scale: 2
+    t.decimal "day_low_price", precision: 6, scale: 2
+    t.decimal "day_open_price", precision: 6, scale: 2
+    t.decimal "previous_close_price", precision: 6, scale: 2
+    t.datetime "price_taken_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

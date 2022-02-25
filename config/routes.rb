@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'portfolio/index'
+  get 'portfolio/show'
+  get 'portfolio/new'
   resources :stocks
   get 'profile/', to: "profile#index"
   get 'profile/show'
