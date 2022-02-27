@@ -8,6 +8,10 @@ class FinnhubClient
     query('stock/profile2', symbol: stock_symbol.upcase)
   end
 
+  def current_price(stock_symbol)
+    query('quote', symbol: stock_symbol.upcase)
+  end
+
   private
 
   def query(api, params = {})

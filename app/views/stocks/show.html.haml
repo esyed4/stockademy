@@ -37,5 +37,8 @@
   %p
     %b Industry:
     = @stock.industry
+  %p
+    %b Price:
+    = "$#{@current_price}"
 
   = link_to 'Back', stocks_path
