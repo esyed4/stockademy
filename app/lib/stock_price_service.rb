@@ -1,6 +1,6 @@
 class StockPriceService < StockService
   # query for price once -> over a set time period
-  def get_current_price(stock)
+  def current_price(stock)
     current_price = StockPrice.find_by(stock_id: stock.id)
 
     Rails.logger.info("#{stock.stock_symbol}: #{current_price.updated_at}, #{10.minutes.ago} ")

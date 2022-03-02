@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'portfolio/index'
-  get 'portfolio/show'
-  get 'portfolio/new'
   resources :stocks
   get 'profile/', to: "profile#index"
   get 'profile/show'
@@ -10,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :stocks, only: [:index, :show]
+  resources :portfolio, only: [:index, :show, :new]
 
 
   root 'root#index'

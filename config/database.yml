@@ -12,7 +12,7 @@ default: &default
 development:
   <<: *default
   username: postgres
-  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
   host: db
   database: stockademy_development
 
@@ -22,13 +22,13 @@ development:
 test:
   <<: *default
   username: postgres
-  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
   host: db
   database: stockademy_test
 
 production:
   <<: *default
   username: postgres
-  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
   host: db
   database: stockademy_production

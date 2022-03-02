@@ -1,2 +1,18 @@
-%h1 Portfolio#index
-%p Find me in app/views/portfolio/index.html.haml
+%h1 Listing portfolios
+
+%table
+  %thead
+    %tr
+      %th Portfolio #
+      %th
+      %th
+      %th
+
+  - if user_signed_in?
+    %tbody
+      - @portfolios.each do |portfolio|
+        %tr
+          %td= portfolio.id
+          %td= link_to 'Show', portfolio
+
+%br

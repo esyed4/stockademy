@@ -14,7 +14,7 @@ class StocksController < ApplicationController
     @stock = stock_populator.stock_by_symbol(@stock_symbol)
 
     price_populator = StockPriceService.new
-    @stock_price = price_populator.get_current_price(Stock.find_by(stock_symbol: @stock_symbol.upcase))
+    @stock_price = price_populator.current_price(Stock.find_by(stock_symbol: @stock_symbol.upcase))
     @current_price = @stock_price.current_price
   end
 
